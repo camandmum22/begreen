@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang=es>
+	<head>
+		<title>Peewah</title>
+		
+		<!-- View port -->
+		<meta name=”viewport” value=”width=device-width, initial-scale=1”>	
+		
+		<!-- Bootstrap -->
+		<link href = "css/bootstrap.min.css" rel="stylesheet">
+		
+		<!--Custom styles-->
+		<link href = "css/styles.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="icon" 
+		      type="image/png" 
+		      href="images/favicon.png">
+		
+	</head>
+	
+	<body>
+		
+		<!-- Navbar  Top-->
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				
+				<!-- Header -->
+				<div class="navbar-header">
+					<!-- Brand -->
+				<!--	<a href="#" class="navbar-brand">Peewah</a>-->
+					
+				    <a class="navbar-brand" href="index.html"> <img class="img-responsive brandPeewah" src="images/brandPeewah.png"></a>
+			
+				
+					<!-- Button -->
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+		
+				
+				<!-- Menus -->
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					
+					<!-- Items -->
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"> <a href="#"> Inicio </a> </li>
+						<li> <a href="#servicios"> Servicios </a> </li>
+						<li> <a href="#contacto" data-toggle="modal"> Contacto </a> </li>
+						
+					</ul>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<!-- Content _ Jumbotron -->
+		
+		<div class="container">
+			<div class="jumbotron">
+				<div class="row">
+				    <div class="col-md-6">
+	  					<h1 class="titlePeewah text-center">&iquest;Quieres promover un evento cultural en tu ciudad?</h1>
+	  					<p class="descriptionPeewah text-center">
+En Peewah creamos plataformas tecnol&oacute;gicas innovadoras que conectan los mejores eventos culturales del pa&iacute;s con sus asistentes
+						</p>		
+					</div>
+				    <div class="col-md-6">
+				        <img class ="img-responsive text-center bigPeewah" src="images/bigLogo.png" />
+				    </div>
+				</div>
+						
+
+			</dv>
+		</div>
+		
+		<!-- Services -->
+		<div class="container" id="servicios">
+				<div class="row">
+					
+					<!-- Culture apps service -->
+					<div class="col-md-4">
+				        <img class ="img-responsive text-center imgService" src="images/mobileapps.png" />
+						<h3 class="text-center">Apps para eventos culturales</h3>
+						<p class="text-center">
+Desarrollamos aplicaciones m&oacute;viles de eventos culturales, tales como ferias y fiestas, que permitan difundir la informaci&oacute;n adecuada a sus asistentes. Para ello, formamos alianzas estrat&eacute;gicas con las entidades organizadoras, ayud&aacute;ndoles a generar nuevos ingresos y agregarle valor a sus eventos. 
+						</p>
+					</div>
+					
+					<!-- Apps as a service -->
+					<div class="col-md-4">
+				        <img class ="img-responsive text-center imgService" src="images/webapps.png" />
+						<h3 class="text-center">Apps a la medida</h3>
+						<p class="text-center">
+Entendemos las necesidades de su negocio y nos enfocamos en ayudarle a generar valor a trav&eacute;s del desarrollo de aplicaciones m&oacute;viles a la medida. Enf&oacute;quese en las actividades que le dan valor a su negocio, nosotros nos encargamos de las soluciones tecnol&oacute;gicas.							
+						</p>
+					</div>
+					
+					<!-- Consulting service -->
+					<div class="col-md-4">
+				        <img class ="img-responsive text-center imgService" src="images/consultorias.png" />
+						<h3 class="text-center">Consultor&iacute;as</h3>
+						<p class="text-center">
+Somos expertos en el desarrollo de aplicaciones m&oacute;viles para sistemas operativos Android y iOS y en temas referentes al dise&ntilde;o de interfaces y dise&ntilde;o de experiencia para este tipo de plataformas. Por ello, ofrecemos el servicio de consultor&iacute;a para que pueda llevar a cabo su idea.							
+						</p>
+					</div>
+					
+				</div>
+		</div>
+		
+		
+		<!-- Contact modal-->
+		<div class="modal fade" id="contacto" role="dialog">
+			<div class="modal-dialog">
+				<div class ="modal-content">
+					<!-- Header -->
+					<div class="modal-header">
+						<h4>Cont&aacute;ctate con nosotros y te ayudaremos en lo que necesitas</h4>
+					</div>
+					<!-- Body -->
+					<div class="modal-body">
+				        <form class="form-horizontal col-sm-12" >
+				          <div class="form-group">
+							  <label>Nombre</label>
+							  <input class="form-control required" placeholder="Su nombre para poder conocerlo" data-placement="top" data-trigger="manual" 
+							  data-content="Debe contener al menos tres caracteres y no contener n&uacute;meros" type="text" name="name">
+						  </div>
+						  
+				          <div class="form-group">
+							  <label>Correo electr&oacute;nico</label>
+							  <input class="form-control email" placeholder="Su email para poder contactarlo" data-placement="top" 
+							  data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarte (user@gmail.com)" type="text" name="email"></div>
+							  
+						  <div class="form-group">
+						      <label>Mensaje</label>
+						      <textarea class="form-control" rows="5" placeholder="Cu&eacute;ntanos en qu&eacute; te podemos colaborar" name="message"></textarea>
+						  </div>
+
+				          <div class="form-group">
+							  <button type="submit" class="btn btn-warning pull-right">Enviar</button> 
+							  <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; La informaci&oacute;n no es válida. </p></div>
+				        </form>
+					</div>
+					<!-- Footer -->
+					<div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- Navbar Bottom -->
+		<div class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<p class="navbar-text pull-left"> &copy; Copyrigth 2015 Peewah</p>
+				<a href="https://twitter.com/peewahco" class = "navbar-btn btn-info btn pull-right">S&iacute;guenos en Twitter</a>
+				<a href="https://www.facebook.com/peewahco" class = "navbar-btn btn-primary btn pull-right btnFB">S&iacute;guenos en FB</a>
+				
+			</div>
+		</div>
+		
+		<script>
+		$(document).ready(function () {
+		    $("button#submit").click(function(){
+		        $.ajax({
+		            type: "POST",
+		            url: "mail.php", //process to mail
+		            data: $('form.contact').serialize(),
+		            success: function(msg){
+		                $("#thanks").html(msg) //hide button and show thank you
+		                $("#form-content").modal('hide'); //hide popup  
+		            },
+		            error: function(){
+		                alert("failure");
+		            }
+		        });
+		    });
+		});
+		</script>
+		
+		
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		
+		
+	</body>
+
+</html>
