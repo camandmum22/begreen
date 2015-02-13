@@ -24,11 +24,13 @@
 	<link rel="icon" 
 	type="image/png" 
 	href="images/favicon.png">
-			  
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 	<!-- Parse -->
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+	
+	<!-- Scripts propios-->
+	<script type="text/javascript" src="js/login.js"> </script>
+	
 		
 		
 </head>
@@ -74,35 +76,6 @@
 		</div>
 	</form>
 	
-
-		
-
-	<!-- Ingreso de vendedores -->
-	<script type="text/javascript">
-  
-  
-  	//Ingreso del vendedor
-	function login(){
-		Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
-		
-		Parse.User.logIn(document.formLogin.cedula.value, document.formLogin.password.value, {
-		  success: function(user) {
-			var newUrl = "registro.html";
-			window.location.replace(newUrl);
-			document.location.href = newUrl;
-			  
-		  },
-		  error: function(user, error) {
-		    // The login failed. Check error to see why.
-			  alert('No puedes ingresar. Intenta más tarde.');
-			  
-		  }
-		});
-
-	}
-	
- 
-	</script>
 
 		
 		
