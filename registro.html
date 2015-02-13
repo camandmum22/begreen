@@ -32,7 +32,20 @@
 	<script type="text/javascript" src="js/registro.js"></script>
 	
 		
-		
+	<script type="text/javascript">
+	$(document).ready(function () {
+	    $('.nav li a').click(function(e) {
+
+	        $('.nav li').removeClass('active');
+
+	        var $parent = $(this).parent();
+	        if (!$parent.hasClass('active')) {
+	            $parent.addClass('active');
+	        }
+	        e.preventDefault();
+	    });
+	});
+	</script>
 </head>
 	
 <body onload="validarVendedor()">
@@ -60,10 +73,10 @@
 			<div class="collapse navbar-collapse navHeaderCollapse">
 					
 				<!-- Items -->
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"> <a href="#" > Cliente nuevo </a> </li>
-					<li> <a href="#clienteExistente" > Cliente existente </a> </li>
-					<li> <a href="#"> Ranking </a> </li>
+				<ul class="nav navbar-nav navbar-right" id="navigation">
+					<li class="active" id ="menuClienteNuevo"> <a href="javascript:void(0)" onclick="clienteNuevoSelected()"> Cliente nuevo </a> </li>
+					<li id="menuClienteExistente"> <a href="javascript:void(0)" onclick="clienteExistenteSelected()"> Cliente existente </a> </li>
+					<li id="menuRanking"> <a href="#"> Ranking </a> </li>
 						
 				</ul>
 					
@@ -84,7 +97,7 @@
 	
 	
 	<!--             CLIENTE NUEVO           -->
-	<div id="clienteNuevo">
+	<div class ="clienteNuevo">
 		<h1 class="text-center">Cliente nuevo</h1>
 	
 		<p class="text-center">En este formulario se registran los clientes que compran por primera vez</p>
@@ -171,7 +184,7 @@
 
 
 	<!--           CLIENTE EXISTENTE         -->
-	<div id="clienteExistente">
+	<div class="clienteExistente">
 		<h1 class="text-center">Cliente existente</h1>
 	
 		<p class="text-center">En este formulario se registran las compras de los clientes que ya se han registrado previamente</p>

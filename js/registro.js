@@ -121,7 +121,6 @@ function validarVendedor(){
 	Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
 	var currentUser = Parse.User.current();
 	if (currentUser) {
-		$(".success").show();
 		document.getElementById("userLogged").innerHTML = 'Vendedor: <strong>' + currentUser.get('name') + '</strong>';		 
 	} 
 	else{
@@ -223,4 +222,28 @@ function registrarCompra(){
 	
 	}
 }
+
+// 5. Esconder registro cliente nuevo
+function clienteExistenteSelected(){
+    $('.clienteNuevo').removeClass("visible").addClass("hidden");
+    $('.clienteExistente').removeClass("hidden").addClass("visible");
+	
+	//Seleccionar opción cliente existente
+	$("#navigation li").removeClass("active");
+	$("#navigation #menuClienteExistente").addClass("active");
+	
+}
+
+// 6. Mostrar registro cliente nuevo
+function clienteNuevoSelected(){
+    $('.clienteExistente').removeClass("visible").addClass("hidden");
+    $('.clienteNuevo').removeClass("hidden").addClass("visible");
+	
+	//Seleccionar opción cliente nuevo
+	$("#navigation li").removeClass("active");
+	$("#navigation #menuClienteNuevo").addClass("active");
+	
+}
+
+
 
