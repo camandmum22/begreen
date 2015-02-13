@@ -25,7 +25,7 @@
 	type="image/png" 
 	href="images/favicon.png">
 			  
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 	<!-- Parse -->
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
@@ -49,46 +49,91 @@
 	</div>
 		
 		
-	<h1 class="text-center">Registro de clientes</h1>
+	<h1 class="text-center">Registro del cliente</h1>
 
-	<!-- Formulario de clientes -->
+	<!-- Formulario de clientes y de la compra -->
 	<form class="form-horizontal col-sm-12" name = "formRegister" action ="javascript:register()" >
-		<div class="form-group">
-			<label>Cédula</label>
-			<input class="form-control required" placeholder="Cédula del cliente" data-placement="top" data-trigger="manual" 
-			data-content="Debe contener al menos tres caracteres" type="text" name="cedula">
-		</div>
-						  
-		<div class="form-group">
-			<label>Nombre</label>
-			<input class="form-control required" placeholder="Nombre del cliente" data-placement="top" 
-			data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="nombre">
-		</div>
-							  
-		<div class="form-group">
-			<label>Email</label>
-			<input class="form-control email" placeholder="El email del cliente para poder contactarlo" data-placement="top" 
-			data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarlo (user@gmail.com)" type="text" name="email">
-		</div>
 		
-		<div class="form-group">
-			<label>Teléfono</label>
-			<input class="form-control" placeholder="El teléfono del cliente para poder contactarlo" data-placement="top" 
-			data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="telefono">
-		</div>
+		<section>
+			
+			<h3> Datos del cliente</h3>
+		
+
+		
+			<div class="form-group">
+				<label>Cédula</label>
+				<input class="form-control required" placeholder="Cédula del cliente" data-placement="top" data-trigger="manual" 
+				data-content="Debe contener al menos tres caracteres" type="text" name="cedula">
+			</div>
+						  
+			<div class="form-group">
+				<label>Nombre</label>
+				<input class="form-control required" placeholder="Nombre del cliente" data-placement="top" 
+				data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="nombre">
+			</div>
+							  
+			<div class="form-group">
+				<label>Email</label>
+				<input class="form-control email" placeholder="El email del cliente para poder contactarlo" data-placement="top" 
+				data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarlo (user@gmail.com)" type="text" name="email">
+			</div>
+		
+			<div class="form-group">
+				<label>Teléfono</label>
+				<input class="form-control" placeholder="El teléfono del cliente para poder contactarlo" data-placement="top" 
+				data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="telefono">
+			</div>
+		
+	
+		</section>
+		
+		<section>
+			
+			<h3> Datos de la compra</h3>
+			
+			<div class="form-group">
+				<label>Recomendado</label>
+				<input class="form-control" placeholder="Cédula de la persona que lo recomendó" data-placement="top" data-trigger="manual" 
+				data-content="Debe contener al menos tres caracteres" type="text" name="recomendado">
+			</div>
+
+			<div class="form-group">
+				<label>Kit de sembrado</label>
+				<input class="form-control " placeholder="Cantidad de kits" data-placement="top" data-trigger="manual" 
+				data-content="Debe ser un número" type="number" name="kitsembrado">
+			</div>
+					  
+			<div class="form-group">
+				<label>Bambúes</label>
+				<input class="form-control" placeholder="Cantidad de bambúes" data-placement="top" data-trigger="manual" 
+				data-content="Debe ser un número" type="number" name="bambues">
+			</div>
+		
+			<div class="form-group">
+				<label>Cactus</label>
+				<input class="form-control" placeholder="Cantidad de cactus" data-placement="top" data-trigger="manual" 
+				data-content="Debe ser un número" type="number" name="cactus">
+			</div>
+		
+	
+		</section>
 		
 
 		<div class="form-group">
 			<button type="submit" class="btn btn-success pull-right">Registrar</button> 
 			<p class="help-block pull-left text-danger hide" id="form-error">&nbsp; La informaci&oacute;n no es válida. </p>
 		</div>
+		
+	
 	</form>
 	
 	
-      <div id="userLogged">
-      </div>
+
+	
+	<div id="userLogged">
+	</div>
 	  
-	  <button class="btn btn-danger" onclick="logout()">Cerrar sesión</button>
+	<button class="btn btn-danger" onclick="logout()">Cerrar sesión</button>
 
 		
 
@@ -96,25 +141,96 @@
 	<script type="text/javascript">
   
   
-  	// Registro de clientes
+	// Registro de clientes
 	function register(){
 		Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
 		var Persona = Parse.Object.extend("Persona");
 		var persona = new Persona();
-		persona.set("cedula", document.formRegister.cedula.value);
-		persona.set("nombre", document.formRegister.nombre.value);
-		persona.set("email", document.formRegister.email.value);
-		persona.set("telefono", document.formRegister.telefono.value);
 		
-		persona.save(null, {
-			success:function(persona){
-			    alert('New object created with objectId: ' + persona.cedula);
+		if(document.formRegister.cedula.value!=null && document.formRegister.cedula.value != "" && document.formRegister.nombre.value!= null && document.formRegister.nombre.value != "" && document.formRegister.email.value != null && document.formRegister.email.value!="" && document.formRegister.telefono.value != null && document.formRegister.telefono.value!="")
+		{
+			persona.set("cedula", document.formRegister.cedula.value);
+			persona.set("nombre", document.formRegister.nombre.value);
+			persona.set("email", document.formRegister.email.value);
+			persona.set("telefono", document.formRegister.telefono.value);
+		
+			persona.save(null, {
+				success:function(persona){				
 				
-			},
-			error:function(persona, error){
-				alert('Failed to create new object, with error code: ' + error.message);
-			}
-		});
+					//Agregar kit de sembrado
+					if(document.formRegister.kitsembrado.value > 0)
+					{
+						var Venta = Parse.Object.extend("Venta");
+						var venta = new Venta();
+						venta.set("cedVendedor",Parse.User.current().get('username'));
+						venta.set("cedCliente",persona.get('cedula'));
+					
+						//Agregar recomendado
+						if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
+						{
+							venta.set("cedRecomendado",document.formRegister.recomendado.value);
+						}
+					
+						venta.set("codProd","PROD1");
+						venta.set("cantidad", parseInt(formRegister.kitsembrado.value));
+						venta.save();
+					}
+				
+					//Agregar bambues
+					if(document.formRegister.bambues.value > 0)
+					{
+						var Venta = Parse.Object.extend("Venta");
+						var venta = new Venta();
+						venta.set("cedVendedor",Parse.User.current().get('username'));
+						venta.set("cedCliente",persona.get('cedula'));
+					
+						//Agregar recomendado
+						if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
+						{
+							venta.set("cedRecomendado",document.formRegister.recomendado.value);
+						}
+					
+						venta.set("codProd","PROD2");
+						venta.set("cantidad", parseInt(formRegister.bambues.value));
+						venta.save();
+					}
+				
+					//Agregar cactus
+					if(document.formRegister.cactus.value > 0)
+					{
+						var Venta = Parse.Object.extend("Venta");
+						var venta = new Venta();
+						venta.set("cedVendedor",Parse.User.current().get('username'));
+						venta.set("cedCliente",persona.get('cedula'));
+					
+						//Agregar recomendado
+						if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
+						{
+							venta.set("cedRecomendado",document.formRegister.recomendado.value);
+						}
+					
+						venta.set("codProd","PROD3");
+						venta.set("cantidad", parseInt(formRegister.cactus.value));
+						venta.save();
+					}
+
+
+
+					alert('Usuario creado: ' + persona.get('cedula'));
+				
+				},
+				error:function(persona, error){
+					alert('El usuario no puede ser creado');
+				}
+			});
+		}
+		else
+		{
+			alert('No puede dejar campos vacíos');
+			
+		}
+		
+
 
 	}
 	
@@ -123,8 +239,10 @@
 		Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
 		var currentUser = Parse.User.current();
 		if (currentUser) {
-			 $(".success").show();
-			 document.getElementById("userLogged").innerHTML = 'Sesión iniciada como: ' + currentUser.get('name');
+			$(".success").show();
+			document.getElementById("userLogged").innerHTML = 'Sesión iniciada como: ' + currentUser.get('name');
+			 
+			obtenerProductos();
 			 
 		} 
 		else{
@@ -134,16 +252,18 @@
 		}
 	
 	}
-	
+
 	//Cerrar sesión
 	function logout(){
-    	var newUrl = "login.html";
+		var newUrl = "login.html";
 		window.location.replace(newUrl);
 		document.location.href = newUrl;
 		Parse.User.logOut();
 	}
  
 	</script>
+	
+	
 		
 
 		
