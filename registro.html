@@ -40,107 +40,196 @@
 	<!-- Navbar  Top-->
 	<div class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			
+				
 			<!-- Header -->
 			<div class="navbar-header">
 				<!-- Brand -->					
 				<a class="navbar-brand" href="index.html"> <img class="img-responsive brandPeewah" src="images/brandPeewah.png"></a>
-			</div>
 			
+				
+				<!-- Button -->
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		
+				
+			<!-- Menus -->
+			<div class="collapse navbar-collapse navHeaderCollapse">
+					
+				<!-- Items -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"> <a href="#" > Cliente nuevo </a> </li>
+					<li> <a href="#clienteExistente" > Cliente existente </a> </li>
+					<li> <a href="#"> Ranking </a> </li>
+						
+				</ul>
+					
+			</div>
+				
 		</div>
 	</div>
 		
-		
-	<h1 class="text-center">Registro del cliente</h1>
-	
-	<p class="text-center">En este formulario se registran los clientes que compran por primera vez</p>
-
-	<!-- Formulario de clientes y de la compra -->
-	<form class="form-horizontal col-sm-12" name = "formRegister" action ="javascript:register()" id="formRegister">
-		
-		<section>
-			
-			<h3> Datos del cliente</h3>
-		
-
-		
-			<div class="form-group">
-				<label>Cédula</label>
-				<input class="form-control required" placeholder="Cédula del cliente" data-placement="top" data-trigger="manual" 
-				data-content="Debe contener al menos tres caracteres" type="text" name="cedula">
-			</div>
-						  
-			<div class="form-group">
-				<label>Nombre</label>
-				<input class="form-control required" placeholder="Nombre del cliente" data-placement="top" 
-				data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="nombre">
-			</div>
-							  
-			<div class="form-group">
-				<label>Email</label>
-				<input class="form-control email" placeholder="El email del cliente para poder contactarlo" data-placement="top" 
-				data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarlo (user@gmail.com)" type="text" name="email">
-			</div>
-		
-			<div class="form-group">
-				<label>Teléfono</label>
-				<input class="form-control" placeholder="El teléfono del cliente para poder contactarlo" data-placement="top" 
-				data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="telefono">
-			</div>
-		
-	
-		</section>
-		
-		<section>
-			
-			<h3> Datos de la compra</h3>
-			
-			<div class="form-group">
-				<label>Recomendado</label>
-				<input class="form-control" placeholder="Cédula de la persona que lo recomendó" data-placement="top" data-trigger="manual" 
-				data-content="Debe contener al menos tres caracteres" type="text" name="recomendado">
-			</div>
-
-			<div class="form-group">
-				<label>Kit de sembrado</label>
-				<input class="form-control " placeholder="Cantidad de kits" data-placement="top" data-trigger="manual" 
-				data-content="Debe ser un número" type="number" name="kitsembrado">
-			</div>
-					  
-			<div class="form-group">
-				<label>Bambúes</label>
-				<input class="form-control" placeholder="Cantidad de bambúes" data-placement="top" data-trigger="manual" 
-				data-content="Debe ser un número" type="number" name="bambues">
-			</div>
-		
-			<div class="form-group">
-				<label>Cactus</label>
-				<input class="form-control" placeholder="Cantidad de cactus" data-placement="top" data-trigger="manual" 
-				data-content="Debe ser un número" type="number" name="cactus">
-			</div>
-		
-	
-		</section>
-		
-
-		<div class="form-group">
-			<button type="submit" class="btn btn-success pull-right">Registrar</button> 
-			<p class="help-block pull-left text-danger hide" id="form-error">&nbsp; La informaci&oacute;n no es válida. </p>
-		</div>
-		
-	
-	</form>
-	
-	
-
-	
+	<!-- Label usuario loggeado -->
 	<div id="userLogged">
 	</div>
-	  
+	
+	<!-- Botón de cerrar sesión -->
 	<button class="btn btn-danger" onclick="logout()">Cerrar sesión</button>
+	
+	
+	
+	
+	
+	<!--             CLIENTE NUEVO           -->
+	<div id="clienteNuevo">
+		<h1 class="text-center">Cliente nuevo</h1>
+	
+		<p class="text-center">En este formulario se registran los clientes que compran por primera vez</p>
 
+		<!-- Formulario de clientes y de la compra -->
+		<form class="form-horizontal col-sm-12" name = "formRegister" action ="javascript:registrarClienteNuevo()" id="formRegister">
+		
+			<section>
+			
+				<h3> Datos del cliente</h3>
 		
 
+		
+				<div class="form-group">
+					<label>Cédula</label>
+					<input class="form-control required" placeholder="Cédula del cliente" data-placement="top" data-trigger="manual" 
+					data-content="Debe contener al menos tres caracteres" type="text" name="cedula">
+				</div>
+						  
+				<div class="form-group">
+					<label>Nombre</label>
+					<input class="form-control required" placeholder="Nombre del cliente" data-placement="top" 
+					data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="nombre">
+				</div>
+							  
+				<div class="form-group">
+					<label>Email</label>
+					<input class="form-control email" placeholder="El email del cliente para poder contactarlo" data-placement="top" 
+					data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarlo (user@gmail.com)" type="text" name="email">
+				</div>
+		
+				<div class="form-group">
+					<label>Teléfono</label>
+					<input class="form-control" placeholder="El teléfono del cliente para poder contactarlo" data-placement="top" 
+					data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="telefono">
+				</div>
+		
+	
+			</section>
+		
+			<section>
+			
+				<h3> Datos de la compra</h3>
+			
+				<div class="form-group">
+					<label>Recomendado</label>
+					<input class="form-control" placeholder="Cédula de la persona que lo recomendó" data-placement="top" data-trigger="manual" 
+					data-content="Debe contener al menos tres caracteres" type="text" name="recomendado">
+				</div>
+
+				<div class="form-group">
+					<label>Kit de sembrado</label>
+					<input class="form-control " placeholder="Cantidad de kits" data-placement="top" data-trigger="manual" 
+					data-content="Debe ser un número" type="number" name="kitsembrado">
+				</div>
+					  
+				<div class="form-group">
+					<label>Bambúes</label>
+					<input class="form-control" placeholder="Cantidad de bambúes" data-placement="top" data-trigger="manual" 
+					data-content="Debe ser un número" type="number" name="bambues">
+				</div>
+		
+				<div class="form-group">
+					<label>Cactus</label>
+					<input class="form-control" placeholder="Cantidad de cactus" data-placement="top" data-trigger="manual" 
+					data-content="Debe ser un número" type="number" name="cactus">
+				</div>
+		
+	
+			</section>
+		
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-success pull-right">Registrar</button> 
+				<p class="help-block pull-left text-danger hide" id="form-error">&nbsp; La informaci&oacute;n no es válida. </p>
+			</div>
+		
+	
+		</form>
+	
+	
+	</div>
+
+
+
+	<!--           CLIENTE EXISTENTE         -->
+	<div id="clienteExistente">
+		<h1 class="text-center">Cliente existente</h1>
+	
+		<p class="text-center">En este formulario se registran las compras de los clientes que ya se han registrado previamente</p>
+
+		<!-- Formulario de clientes y de la compra -->
+		<form class="form-horizontal col-sm-12" name = "formCompra" action ="javascript:registrarCompra()" id="formCompra">
+		
+			<section>
+			
+				<h3> Datos del cliente</h3>
+		
+
+		
+				<div class="form-group">
+					<label>Cédula</label>
+					<input class="form-control required" placeholder="Cédula del cliente" data-placement="top" data-trigger="manual" 
+					data-content="Debe contener al menos tres caracteres" type="text" name="cedula">
+				</div>
+						  		
+	
+			</section>
+		
+			<section>
+			
+				<h3> Datos de la compra</h3>
+
+				<div class="form-group">
+					<label>Kit de sembrado</label>
+					<input class="form-control " placeholder="Cantidad de kits" data-placement="top" data-trigger="manual" 
+					data-content="Debe ser un número" type="number" name="kitsembrado">
+				</div>
+					  
+				<div class="form-group">
+					<label>Bambúes</label>
+					<input class="form-control" placeholder="Cantidad de bambúes" data-placement="top" data-trigger="manual" 
+					data-content="Debe ser un número" type="number" name="bambues">
+				</div>
+		
+				<div class="form-group">
+					<label>Cactus</label>
+					<input class="form-control" placeholder="Cantidad de cactus" data-placement="top" data-trigger="manual" 
+					data-content="Debe ser un número" type="number" name="cactus">
+				</div>
+		
+	
+			</section>
+		
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-success pull-right">Registrar</button> 
+				<p class="help-block pull-left text-danger hide" id="form-error">&nbsp; La informaci&oacute;n no es válida. </p>
+			</div>
+		
+	
+		</form>
+	
+	
+	</div>
 
 	
 		
