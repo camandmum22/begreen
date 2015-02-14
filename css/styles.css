@@ -1,5 +1,6 @@
+/*index.html*/
+
 .btnFB{
-	
 	margin-right:10px;
 }
 
@@ -7,9 +8,9 @@
 	margin-top:-10px;
 }
 
-.bigPeewah{
+.bigBeGreen{
 	margin:0 auto;
-	width:300px;
+	width:400px;
 	height:300px;
 }
 
@@ -20,3 +21,53 @@
 body{
 	padding-bottom:150px;
 }
+
+#thermometer { 
+	height: 20px; 
+	padding:0; 
+	border-radius:5px;
+	border: #cccccc solid 1px; 
+	vertical-align:middle; 
+}
+
+#level { 
+	height: 20px; 
+	width: 0%; 
+	margin: 0; padding:0; 
+	border-right: 1px solid #666666; 
+	background: #82b440; 
+	border-radius:5px;
+	vertical-align:middle; 
+}
+
+.contenedorTermometro{
+	margin-top:40px;
+}
+
+.fundado{
+	display:inline;
+	font-size:150%;
+}
+
+.estadisticasCompetencia{
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.fundadoMeta{
+	margin-right:50px;
+}
+
+.headerProductos{
+	height:50px;
+	background-color:#82b440;
+	margin-bottom:40px;
+	border-radius:4px;
+	color:white;
+}
+
+.headerProductosTitle{
+    height: 40px;
+    line-height: 40px;
+}
+

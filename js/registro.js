@@ -121,7 +121,11 @@ function validarVendedor(){
 	Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
 	var currentUser = Parse.User.current();
 	if (currentUser) {
-		document.getElementById("userLogged").innerHTML = 'Vendedor: <strong>' + currentUser.get('name') + '</strong>';		 
+		//Mostrar información del vendedor loggeado
+		document.getElementById("userLogged").innerHTML = 'Vendedor: <strong>' + currentUser.get('name') + '</strong>';	
+		//Ocultar panel de cliente existente	
+	    $('.clienteExistente').removeClass("visible").addClass("hidden");
+		 
 	} 
 	else{
 		var newUrl = "login.html";
