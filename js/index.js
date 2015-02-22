@@ -57,3 +57,27 @@ function mostrarRankingUsuarios()
 	window.location.replace(newUrl);
 	document.location.href = newUrl;
 }
+
+//Mostrar kits
+function mostrarKits()
+{
+	var newUrl = "kits.html";
+	window.location.replace(newUrl);
+	document.location.href = newUrl;
+}
+
+//Mostrar bambues
+function mostrarBambues()
+{
+	var newUrl = "bambues.html";
+	window.location.replace(newUrl);
+	document.location.href = newUrl;
+}
+
+//Mostrar cactus
+function mostrarCactus()
+{
+	var newUrl = "cactus.html";
+	window.location.replace(newUrl);
+	document.location.href = newUrl;
+}
