@@ -1,6 +1,7 @@
 // 1. Registro de clientes nuevos
 function registrarClienteNuevo(){
 	Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
+		
 	var Persona = Parse.Object.extend("Persona");
 	var persona = new Persona();
 	
@@ -11,7 +12,7 @@ function registrarClienteNuevo(){
 		persona.set("email", document.formRegister.email.value);
 		persona.set("telefono", document.formRegister.telefono.value);
 		
-		
+
 		//Verificar si el usuario ya existe
 		var query = new Parse.Query(Persona);
 		query.equalTo("cedula", document.formRegister.cedula.value);
@@ -23,9 +24,34 @@ function registrarClienteNuevo(){
 				{
 					alert('Ya existe un usuario registrado con esa cédula');
 	          
-					//El usuario no existe. Se puede crear.
+				//El usuario no existe. Se puede crear.
 				} else 
 				{
+					//Agregar recomendado
+					if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
+					{
+						//Guardar registro del recomendado
+						persona.set("cedRecomendado", document.formRegister.recomendado.value);
+			
+						//Aumentar puntaje de quien recomendó
+						var query = new Parse.Query(Persona);
+						query.equalTo("cedula",document.formRegister.recomendado.value);
+						query.first({
+							success:function(recomendado)
+							{
+								recomendado.increment("recomendaciones");
+								recomendado.increment("puntaje");
+								recomendado.save();
+							},
+							error:function(error)
+							{
+								alert("Error registrando el recomendado");
+					
+							}
+				
+						});
+			
+					}
 
 					//Guardar usuario
 					persona.save(null, {
@@ -34,60 +60,91 @@ function registrarClienteNuevo(){
 							//Agregar kit de sembrado
 							if(document.formRegister.kitsembrado.value > 0)
 							{
+								//Guardar venta
 								var Venta = Parse.Object.extend("Venta");
 								var venta = new Venta();
 								venta.set("cedVendedor",Parse.User.current().get('username'));
 								venta.set("cedCliente",persona.get('cedula'));
-				
-								//Agregar recomendado
-								if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
-								{
-									venta.set("cedRecomendado",document.formRegister.recomendado.value);
-								}
-				
 								venta.set("codProd","PROD1");
 								venta.set("cantidad", parseInt(formRegister.kitsembrado.value));
 								venta.save();
+								
+								//Guardar puntaje de la persona
+								persona.increment("kits", parseInt(formRegister.kitsembrado.value));
+								persona.increment("puntaje", parseInt(formRegister.kitsembrado.value));
+								persona.save();
+								
+								//Incrementar ventas del vendedor
+								Parse.User.current().increment("kits",parseInt(formRegister.kitsembrado.value));
+								Parse.User.current().save();
 							}
 			
-							//Agregar bambues
-							if(document.formRegister.bambues.value > 0)
+							//Agregar bambu pequeño
+							if(document.formRegister.bambuPequeno.value > 0)
 							{
+								//Guardar venta
 								var Venta = Parse.Object.extend("Venta");
 								var venta = new Venta();
 								venta.set("cedVendedor",Parse.User.current().get('username'));
 								venta.set("cedCliente",persona.get('cedula'));
-				
-								//Agregar recomendado
-								if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
-								{
-									venta.set("cedRecomendado",document.formRegister.recomendado.value);
-								}
-				
 								venta.set("codProd","PROD2");
-								venta.set("cantidad", parseInt(formRegister.bambues.value));
+								venta.set("cantidad", parseInt(formRegister.bambuPequeno.value));
 								venta.save();
+								
+								//Guardar puntaje de la persona
+								persona.increment("bambusPequenos", parseInt(formRegister.bambuPequeno.value));
+								persona.increment("puntaje", parseInt(formRegister.bambuPequeno.value));
+								persona.save();
+								
+								//Incrementar ventas del vendedor
+								Parse.User.current().increment("bambuPequeno",parseInt(formRegister.bambuPequeno.value));
+								Parse.User.current().save();
 							}
 			
 							//Agregar cactus
 							if(document.formRegister.cactus.value > 0)
 							{
+								//Guardar venta
 								var Venta = Parse.Object.extend("Venta");
 								var venta = new Venta();
 								venta.set("cedVendedor",Parse.User.current().get('username'));
 								venta.set("cedCliente",persona.get('cedula'));
-				
-								//Agregar recomendado
-								if(document.formRegister.recomendado.value!=null && document.formRegister.recomendado.value!="")
-								{
-									venta.set("cedRecomendado",document.formRegister.recomendado.value);
-								}
-				
 								venta.set("codProd","PROD3");
 								venta.set("cantidad", parseInt(formRegister.cactus.value));
 								venta.save();
+								
+								//Guardar puntaje de la persona
+								persona.increment("cactus", parseInt(formRegister.cactus.value));
+								persona.increment("puntaje", parseInt(formRegister.cactus.value));
+								persona.save();
+								
+								//Incrementar ventas del vendedor
+								Parse.User.current().increment("cactus",parseInt(formRegister.cactus.value));
+								Parse.User.current().save();
 							}
-
+							
+							//Agregar bambu grande
+							if(document.formRegister.bambuGrande.value > 0)
+							{
+								//Guardar venta
+								var Venta = Parse.Object.extend("Venta");
+								var venta = new Venta();
+								venta.set("cedVendedor",Parse.User.current().get('username'));
+								venta.set("cedCliente",persona.get('cedula'));
+								venta.set("codProd","PROD4");
+								venta.set("cantidad", parseInt(formRegister.bambuGrande.value));
+								venta.save();
+								
+								//Guardar puntaje de la persona
+								persona.increment("bambusGrandes", parseInt(formRegister.bambuGrande.value));
+								persona.increment("puntaje", parseInt(formRegister.bambuGrande.value));
+								persona.save();
+								
+								//Incrementar ventas del vendedor
+								Parse.User.current().increment("bambuGrande",parseInt(formRegister.bambuGrande.value));
+								Parse.User.current().save();
+							}
+			
 
 							//Limpiar campos
 							document.getElementById('formRegister').reset();
@@ -103,7 +160,7 @@ function registrarClienteNuevo(){
 				}
 			},
 			error: function(error) {
-				response.error("Error registrando el usuario. Intente más tarde.");
+				alert("Error registrando el usuario. Intente más tarde.");
 			}
 		});
 	
@@ -121,11 +178,12 @@ function validarVendedor(){
 	Parse.initialize("LUSRBvC9SjQBrv2YEPCoCMO3gDbDVzy415qrZumJ", "GQyuwQsf0IBgbeTCzWKDqr5TxOwral7IvdlYbT6J");    
 	var currentUser = Parse.User.current();
 	if (currentUser) {
-		//Mostrar información del vendedor loggeado
-		document.getElementById("userLogged").innerHTML = 'Vendedor: <strong>' + currentUser.get('name') + '</strong>';	
-		//Ocultar panel de cliente existente	
-	    $('.clienteExistente').removeClass("visible").addClass("hidden");
-		 
+		
+  		//Mostrar información del vendedor loggeado
+  		document.getElementById("userLogged").innerHTML = 'Vendedor: <strong>' + currentUser.get('name') + '</strong>';	
+  		//Ocultar panel de cliente existente	
+  	    $('.clienteExistente').removeClass("visible").addClass("hidden");
+
 	} 
 	else{
 		var newUrl = "login.html";
@@ -163,37 +221,90 @@ function registrarCompra(){
 					//Agregar kit de sembrado
 					if(document.formCompra.kitsembrado.value > 0)
 					{
+						//Guardar venta
 						var Venta = Parse.Object.extend("Venta");
 						var venta = new Venta();
 						venta.set("cedVendedor",Parse.User.current().get('username'));
 						venta.set("cedCliente",document.formCompra.cedula.value);
 						venta.set("codProd","PROD1");
-						venta.set("cantidad", parseInt(formCompra.kitsembrado.value));
+						venta.set("cantidad", parseInt(document.formCompra.kitsembrado.value));
 						venta.save();
+						
+						//Guardar puntaje de la persona
+						object.increment("kits", parseInt(document.formCompra.kitsembrado.value));
+						object.increment("puntaje", parseInt(document.formCompra.kitsembrado.value));
+						object.save();
+						
+						//Incrementar ventas del vendedor
+						Parse.User.current().increment("kits",parseInt(formCompra.kitsembrado.value));
+						Parse.User.current().save();
 					}
 		
-					//Agregar bambues
-					if(document.formCompra.bambues.value > 0)
+	
+					//Agregar bambu pequeño
+					if(document.formCompra.bambuPequeno.value > 0)
 					{
+						//Guardar venta
 						var Venta = Parse.Object.extend("Venta");
 						var venta = new Venta();
 						venta.set("cedVendedor",Parse.User.current().get('username'));
 						venta.set("cedCliente",document.formCompra.cedula.value);
 						venta.set("codProd","PROD2");
-						venta.set("cantidad", parseInt(formCompra.bambues.value));
+						venta.set("cantidad", parseInt(document.formCompra.bambuPequeno.value));
 						venta.save();
+						
+						//Guardar puntaje de la persona
+						object.increment("bambusPequenos",parseInt(document.formCompra.bambuPequeno.value));
+						object.increment("puntaje",parseInt(document.formCompra.bambuPequeno.value));
+						object.save();
+						
+						//Incrementar ventas del vendedor
+						Parse.User.current().increment("bambuPequeno",parseInt(formCompra.bambuPequeno.value));
+						Parse.User.current().save();
+					}
+					
+					//Agregar bambu grande
+					if(document.formCompra.bambuGrande.value > 0)
+					{
+						//Guardar venta
+						var Venta = Parse.Object.extend("Venta");
+						var venta = new Venta();
+						venta.set("cedVendedor",Parse.User.current().get('username'));
+						venta.set("cedCliente",document.formCompra.cedula.value);
+						venta.set("codProd","PROD4");
+						venta.set("cantidad", parseInt(document.formCompra.bambuGrande.value));
+						venta.save();
+						
+						//Guardar puntaje de la persona
+						object.increment("bambusGrandes", parseInt(document.formCompra.bambuGrande.value));
+						object.increment("puntaje", parseInt(document.formCompra.bambuGrande.value));
+						object.save();
+						
+						//Incrementar ventas del vendedor
+						Parse.User.current().increment("bambuGrande",parseInt(formCompra.bambuGrande.value));
+						Parse.User.current().save();
 					}
 		
 					//Agregar cactus
 					if(document.formCompra.cactus.value > 0)
 					{
+						//Guardar venta
 						var Venta = Parse.Object.extend("Venta");
 						var venta = new Venta();
 						venta.set("cedVendedor",Parse.User.current().get('username'));
 						venta.set("cedCliente",document.formCompra.cedula.value);
 						venta.set("codProd","PROD3");
-						venta.set("cantidad", parseInt(formCompra.cactus.value));
+						venta.set("cantidad", parseInt(document.formCompra.cactus.value));
 						venta.save();
+						
+						//Guardar puntaje de la persona
+						object.increment("cactus", parseInt(document.formCompra.cactus.value));
+						object.increment("puntaje", parseInt(document.formCompra.cactus.value));
+						object.save();
+						
+						//Incrementar ventas del vendedor
+						Parse.User.current().increment("cactus",parseInt(formCompra.cactus.value));
+						Parse.User.current().save();
 					}
 
 

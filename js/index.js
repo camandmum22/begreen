@@ -5,16 +5,25 @@ function calcularTermometro(){
 	var unit = "%";
 	var Venta = Parse.Object.extend("Venta");
 	var query = new Parse.Query(Venta);
-	query.limit(500);
-	query.count({
-	  success: function(count) {
-	    // The count request succeeded. Show the count
-		  if(count<100)
+	query.limit(1000);
+	query.find({
+	  success: function(list) {
+	    // The count request succeeded. Show the count	
+		  var totalPlantas = 0;
+		  
+		  for(var i = 0; i < list.length; i++)
 		  {
-			var percentage = count/500* 100;
+			  var venta = list[i];
+			  totalPlantas += venta.get("cantidad");
+		  }
+		  
+		  	  
+		  if(totalPlantas<500)
+		  {
+			var percentage = totalPlantas/500* 100;
 		  	$('#level').css('width', percentage + unit);
 		    document.getElementById("fundadoMeta").innerHTML = "<strong>" + percentage + "% </strong><span>Meta</span>";
-		    document.getElementById("fundadoEntregados").innerHTML = "<strong>" + count + "</strong> <span>Vendidas</span>";
+		    document.getElementById("fundadoEntregados").innerHTML = "<strong>" + totalPlantas + "</strong> <span>Vendidas</span>";
 			
 		  }
 		  else
@@ -30,4 +39,21 @@ function calcularTermometro(){
 		  
 	  }
 	});
+}
+
+
+//Mostrar página de contacto
+function mostrarContacto()
+{
+	var newUrl = "contacto.html";
+	window.location.replace(newUrl);
+	document.location.href = newUrl;
+}
+
+//Mostrar ranking de usuarios
+function mostrarRankingUsuarios()
+{
+	var newUrl = "rankingUsuarios.html";
+	window.location.replace(newUrl);
+	document.location.href = newUrl;
 }

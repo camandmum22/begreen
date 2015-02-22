@@ -3,7 +3,7 @@
 <head>
 
 		
-	<title>BeGreen</title>
+	<title>Inicio - BeGreen</title>
 		
 	<!-- View port -->
 	<meta name=”viewport” value=”width=device-width, initial-scale=1”>	
@@ -63,7 +63,9 @@
 				<!-- Items -->
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"> <a href="#"> Inicio </a> </li>
-					<li> <a href="#contacto" data-toggle="modal"> Contacto </a> </li>
+					<li> <a href="#" onclick="javascript:mostrarRankingUsuarios()"> Ranking </a> </li>
+					<li> <a href="#" onclick="javascript:mostrarContacto()"> Contacto </a> </li>
+					
 						
 				</ul>
 					
@@ -81,13 +83,13 @@
 				
 				<!-- Texto izquierda-->
 				<div class="col-md-6">
-					<h1 class="titlePeewah text-center">Ayudemos a nuestro planeta</h1>
+					<h1 class="titlePeewah text-center">¡Descubre tu lado verde!</h1>
 					<p class="descriptionPeewah text-center">
-						Ayúdanos a cumplir nuestra meta de entregar <strong>500</strong> arbolitos y darle un respiro a nuestro planeta tierra
+						Nuestra meta consiste en repartir <strong>500</strong> plantas y cultivar conciencia ambiental en personas de todas las edades. Tu aporte se verá reflejado en la barra inferior, en el ranking y en nuestro planeta.
 					</p>		
 				</div>
 					
-				<!-- Texto derecha -->
+				<!-- Imagen derecha -->
 				<div class="col-md-6">
 					<img class ="img-responsive text-center bigBeGreen" src="images/valleCocora.jpg" />
 				</div>
@@ -102,7 +104,7 @@
 				</div>
 				
 				<!-- Estadísticas -->
-				<div class="estadisticasCompetencia text-center">
+				<div class="estadisticasCompetencia col-md-12 text-center">
 					<ul >
 						<li class="fundado fundadoMeta" id="fundadoMeta">
 						</li>
@@ -129,76 +131,52 @@
 			</div>
 					
 			<!-- Culture apps service -->
-			<div class="col-md-4">
-				<img class ="img-responsive text-center imgService" src="images/mobileapps.png" />
+			<div class="col-md-4 service">
+				<img class ="img-responsive text-center imgService" src="images/kits.jpg" />
 				<h3 class="text-center">Kits de sembrado</h3>
 				<p class="text-center">
-					Desarrollamos aplicaciones m&oacute;viles de eventos culturales, tales como ferias y fiestas, que permitan difundir la informaci&oacute;n adecuada a sus asistentes. Para ello, formamos alianzas estrat&eacute;gicas con las entidades organizadoras, ayud&aacute;ndoles a generar nuevos ingresos y agregarle valor a sus eventos. 
+Los kits listos para plantar son ideales para aprender sobre el ciclo de vida de las plantas y sobre responsabilidad ambiental. Cada kit contiene maceta, variedad de semillas, tierra fértil para sembrar y señaladores de cultivo. No dejes pasar esta experiencia, pulsa abajo y averigua qué se siente crear una vida.
 				</p>
+			<div class="centered">
+				
+				<button class="btn btn-success text-center" type="button">Conóceme más</button>
+			</div>
 				
 			</div>
 					
 			<!-- Apps as a service -->
-			<div class="col-md-4">
-				<img class ="img-responsive text-center imgService" src="images/webapps.png" />
+			<div class="col-md-4 service">
+				<img class ="img-responsive text-center imgService" src="images/bambu.jpg" />
 				<h3 class="text-center">Bambués</h3>
 				<p class="text-center">
-					Entendemos las necesidades de su negocio y nos enfocamos en ayudarle a generar valor a trav&eacute;s del desarrollo de aplicaciones m&oacute;viles a la medida. Enf&oacute;quese en las actividades que le dan valor a su negocio, nosotros nos encargamos de las soluciones tecnol&oacute;gicas.							
+					Provengo de Asia. Pertenezco a la familia de las gramíneas. Tengo familiares que alcanzan hasta 40 metros de altura en su estado de madurez e incluso soy considerado la viga naturak más fuerte del mundo, razón por la cual fui usada para sostener el palacio chino. Si quieres saber más de mi dale click al botón de abajo.							
 				</p>
+				
+			<div class="centered">
+				
+				<button class="btn btn-success text-center" type="button">Conóceme más</button>
+			</div>
+				
 			</div>
 					
 			<!-- Consulting service -->
-			<div class="col-md-4">
-				<img class ="img-responsive text-center imgService" src="images/consultorias.png" />
+			<div class="col-md-4 service">
+				<img class ="img-responsive text-center imgService" src="images/cactus.jpg" />
 				<h3 class="text-center">Cactus</h3>
 				<p class="text-center">
-					Somos expertos en el desarrollo de aplicaciones m&oacute;viles para sistemas operativos Android y iOS y en temas referentes al dise&ntilde;o de interfaces y dise&ntilde;o de experiencia para este tipo de plataformas. Por ello, ofrecemos el servicio de consultor&iacute;a para que pueda llevar a cabo su idea.							
+Me puedes encontrar en lugares como América del Norte, del Sur, del Centro y África. Mi familia es algo espinosa. Tengo cuatro subfamilias y tengo entre 30 y 40 millones de año de evolución. Conoce mis beneficios acá.				
 				</p>
+				
+			<div class="centered">
+				
+				<button class="btn btn-success text-center" type="button">Conóceme más</button>
+			</div>
+				
 			</div>
 					
 		</div>
 	</div>
 		
-		
-	<!-- Contact modal-->
-	<div class="modal fade" id="contacto" role="dialog">
-		<div class="modal-dialog">
-			<div class ="modal-content">
-				<!-- Header -->
-				<div class="modal-header">
-					<h4>Cont&aacute;ctate con nosotros y te ayudaremos en lo que necesitas</h4>
-				</div>
-				<!-- Body -->
-				<div class="modal-body">
-					<form class="form-horizontal col-sm-12" >
-						<div class="form-group">
-							<label>Nombre</label>
-							<input class="form-control required" placeholder="Su nombre para poder conocerlo" data-placement="top" data-trigger="manual" 
-							data-content="Debe contener al menos tres caracteres y no contener n&uacute;meros" type="text" name="name">
-						</div>
-						  
-						<div class="form-group">
-							<label>Correo electr&oacute;nico</label>
-							<input class="form-control email" placeholder="Su email para poder contactarlo" data-placement="top" 
-							data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarte (user@gmail.com)" type="text" name="email"></div>
-							  
-							<div class="form-group">
-								<label>Mensaje</label>
-								<textarea class="form-control" rows="5" placeholder="Cu&eacute;ntanos en qu&eacute; te podemos colaborar" name="message"></textarea>
-							</div>
-
-							<div class="form-group">
-								<button type="submit" class="btn btn-warning pull-right">Enviar</button> 
-								<p class="help-block pull-left text-danger hide" id="form-error">&nbsp; La informaci&oacute;n no es válida. </p></div>
-							</form>
-						</div>
-						<!-- Footer -->
-						<div class="modal-footer">
-							<a class="btn btn-default" data-dismiss="modal">Cerrar</a>
-						</div>
-					</div>
-				</div>
-			</div>
 		
 		
 			<!-- Navbar Bottom -->
@@ -212,31 +190,6 @@
 			</div>
 
 		
-		
-			<!-- Contact form -->
-			<script>
-			$(document).ready(function () {
-				$("button#submit").click(function(){
-					$.ajax({
-						type: "POST",
-						url: "mail.php", //process to mail
-						data: $('form.contact').serialize(),
-						success: function(msg){
-							$("#thanks").html(msg) //hide button and show thank you
-							$("#form-content").modal('hide'); //hide popup  
-						},
-						error: function(){
-							alert("failure");
-						}
-					});
-				});
-			});
-			</script>
-		
-		
-		
-		
-
 
 		
 		

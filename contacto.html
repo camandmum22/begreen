@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+
+		
+	<title>Contacto - BeGreen</title>
+		
+	<!-- View port -->
+	<meta name=”viewport” value=”width=device-width, initial-scale=1”>	
+		
+	<!-- Formato-->
+	<meta charset="utf-8">
+		
+	<!-- Descripción del sitio -->
+	<meta name="description" content="Sitio web oficial de BeGreen Colombia">
+		
+	<!-- Bootstrap -->
+	<link href = "css/bootstrap.min.css" rel="stylesheet">
+		
+	<!--Custom styles-->
+	<link href = "css/styles.css" rel="stylesheet">
+	<link href="css/custom-navbar.css" rel="stylesheet">
+	
+		
+	<!-- Favicon -->
+	<link rel="icon" 
+	type="image/png" 
+	href="images/favicon.png">
+	
+	<!-- Parse -->
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+	
+	<!-- Scripts propios-->
+	<script type="text/javascript" src="js/contacto.js"> </script>
+	
+		
+		
+</head>
+	
+<body>
+	
+
+	
+	<!-- Navbar  Top-->
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+				
+			<!-- Header -->
+			<div class="navbar-header">
+				<!-- Brand -->					
+				<a class="navbar-brand" href="index.html"> <img class="img-responsive brandPeewah" src="images/brandPeewah.png"></a>
+			
+				
+				<!-- Button -->
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		
+				
+			<!-- Menus -->
+			<div class="collapse navbar-collapse navHeaderCollapse">
+					
+				<!-- Items -->
+				<ul class="nav navbar-nav navbar-right">
+					<li> <a href="#" onclick="javascript:mostrarIndex()"> Inicio </a> </li>
+					<li> <a href="#" onclick="javascript:mostrarRankingUsuarios()"> Ranking </a> </li>
+					<li class="active"> <a href="#"> Contacto </a> </li>
+					
+						
+				</ul>
+					
+			</div>
+				
+		</div>
+	</div>
+		
+		
+		<!-- Form message -->
+		<h3 class="text-center">Contáctate con nosotros para ayudarle al planeta a respirar</h3>
+		
+	
+		
+		<form class="form-horizontal col-md-6 formContacto" id="contactForm" action ="javascript:enviarCorreo()">
+			
+			
+			<div class="form-group">
+				<label>Nombre</label>
+				<input class="form-control" placeholder="Tu nombre para poder conocerte" data-placement="top" data-trigger="manual" 
+				data-content="Debe contener al menos tres caracteres y no contener números" type="text" id="name">
+			</div>
+						  
+			<div class="form-group">
+				<label>Correo electrónico</label>
+				<input class="form-control" placeholder="Tu email para poder contactarte" data-placement="top" 
+				data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarte (user@gmail.com)" type="text" id="email">
+			</div>
+							  
+				<div class="form-group">
+					<label>Mensaje</label>
+					<textarea class="form-control" rows="5" placeholder="Cuéntanos en qué te podemos colaborar" id="message"></textarea>
+				</div>
+				
+				<div id="response"></div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-success pull-right">Enviar</button> 
+					<p class="help-block pull-left text-danger hide" id="form-error">La información no es válida. </p>
+				</div>								       
+		 </form>
+	 
+	
+
+		
+		
+
+		
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.js"></script>
+		
+		
+</body>
+
+</html>

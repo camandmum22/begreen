@@ -60,7 +60,7 @@ body{
 
 .headerProductos{
 	height:50px;
-	background-color:#82b440;
+	background-color:#82c840;
 	margin-bottom:40px;
 	border-radius:4px;
 	color:white;
@@ -70,4 +70,30 @@ body{
     height: 40px;
     line-height: 40px;
 }
+.formContacto{
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+	float:inherit;
+}
 
+#tablaRanking{
+	margin-top:40px;
+}
+
+.descripcionRankingUsuarios{
+	margin-top:40px;
+}
+
+.bigRanking{
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.centered{
+	text-align:center;
+}
+
+.service{
+	padding-top:40px;
+}

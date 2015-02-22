@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+
+		
+	<title>Ranking - BeGreen</title>
+		
+	<!-- View port -->
+	<meta name=”viewport” value=”width=device-width, initial-scale=1”>	
+		
+	<!-- Formato-->
+	<meta charset="utf-8">
+		
+	<!-- Descripción del sitio -->
+	<meta name="description" content="Sitio web oficial de BeGreen Colombia">
+		
+	<!-- Bootstrap -->
+	<link href = "css/bootstrap.min.css" rel="stylesheet">
+		
+	<!--Custom styles-->
+	<link href = "css/styles.css" rel="stylesheet">
+		
+	<link href="css/custom-navbar.css" rel="stylesheet">
+		
+	<!-- Favicon -->
+	<link rel="icon" 
+	type="image/png" 
+	href="images/favicon.png">
+	
+	<!-- Parse -->
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script type="text/javascript" src="js/rankingUsuarios.js"></script>
+			  
+	
+		
+		
+</head>
+	
+<body onload="mostrarRankingClientes()">
+	
+
+	
+	<!-- Navbar  Top-->
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+				
+			<!-- Header -->
+			<div class="navbar-header">
+				<!-- Brand -->					
+				<a class="navbar-brand" href="index.html"> <img class="img-responsive brandPeewah" src="images/brandPeewah.png"></a>
+			
+				
+				<!-- Button -->
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		
+				
+			<!-- Menus -->
+			<div class="collapse navbar-collapse navHeaderCollapse">
+					
+				<!-- Items -->
+				<ul class="nav navbar-nav navbar-right">
+					<li> <a href="#" onclick="javascript:mostrarIndex()"> Inicio </a> </li>
+					<li class="active"> <a href="#"> Ranking </a> </li>
+					<li> <a href="#" onclick="javascript:mostrarContacto()"> Contacto </a> </li>
+					
+						
+				</ul>
+					
+			</div>
+				
+		</div>
+	</div>
+	
+	<!-- Content _ Jumbotron -->
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				
+				<!-- Texto izquierda-->
+				<div class="col-md-6">
+					<h1 class="text-center">Ranking ambiental</h1>
+					<p class="descripcionRankingUsuarios text-center">
+Cada vez que compras un <strong>kit</strong>, un <strong>cactus</strong> o un <strong>bambú</strong> acumulas puntos. También puedes hacerlo <strong>recomendándonos</strong> a otras personas. Los primeros puestos recibirán un <strong>premio sorpresa</strong> y se les dará un reconocimiento por haber contribuido con esta causa.
+
+					</p>		
+				</div>
+				
+				<!-- Texto derecha -->
+				<div class="col-md-6">
+					<img class ="img-responsive text-center bigRanking" src="images/envfriend.jpg" />
+				</div>
+					
+			</div>
+						
+		</dv>
+	</div>
+		
+
+
+		
+	<table id="tablaRanking" class="table table-bordered table-striped table-condensed">
+		<thead>
+			<tr>
+				<th class="text-center">#</th>
+				<th class="text-center">Nombre</th>
+				<th class="text-center">Puntaje</th>
+			</tr>
+		</thead>
+	</table>	
+		
+
+		
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.js"></script>
+		
+		
+</body>
+
+</html>
