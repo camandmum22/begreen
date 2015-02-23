@@ -35,42 +35,48 @@ function mostrarRankingClientes()
 				//Crear person
 				var persona = results[i];
 				
-				//Crear fila
-				var tr = tbl.insertRow();
+				if(persona.get('cedula') != "grupo")
+				{
+					//Crear fila
+					var tr = tbl.insertRow();
 				
-				//Agregar posición
-				var tdPosicion = tr.insertCell();
-				tdPosicion.className="text-center";
-				tdPosicion.appendChild(document.createTextNode((i+1)+''));
+					//Agregar posición
+					var tdPosicion = tr.insertCell();
+					tdPosicion.className="text-center";
+					tdPosicion.appendChild(document.createTextNode((i+1)+''));
 				
-				//Agregar nombre
-				var tdNombre = tr.insertCell();
-				tdNombre.className="text-center";
-				tdNombre.appendChild(document.createTextNode(persona.get('nombre')));
+					//Agregar nombre
+					var tdNombre = tr.insertCell();
+					tdNombre.className="text-center";
+					tdNombre.appendChild(document.createTextNode(persona.get('nombre')));
 				
-				//Agregar kits
-				//var tdKits = tr.insertCell();
-				//tdKits.appendChild(document.createTextNode(persona.get('kits')));
+					//Agregar kits
+					//var tdKits = tr.insertCell();
+					//tdKits.appendChild(document.createTextNode(persona.get('kits')));
 				
-				//Agregar bambues grandes
-				//var tdBambuGrande = tr.insertCell();
-				//tdBambuGrande.appendChild(document.createTextNode(persona.get('bambusGrandes')));
+					//Agregar bambues grandes
+					//var tdBambuGrande = tr.insertCell();
+					//tdBambuGrande.appendChild(document.createTextNode(persona.get('bambusGrandes')));
 				
-				//Agregar bambues pequeños
-				//var tdBambuPequeno = tr.insertCell();
-				//tdBambuPequeno.appendChild(document.createTextNode(persona.get('bambusPequenos')));
+					//Agregar bambues pequeños
+					//var tdBambuPequeno = tr.insertCell();
+					//tdBambuPequeno.appendChild(document.createTextNode(persona.get('bambusPequenos')));
 				
-				//Agregar cactus
-				//var tdCactus = tr.insertCell();
-				//tdCactus.appendChild(document.createTextNode(persona.get('cactus')));
+					//Agregar cactus
+					//var tdCactus = tr.insertCell();
+					//tdCactus.appendChild(document.createTextNode(persona.get('cactus')));
 				
-				//Agregar recomendaciones
-				//var tdRecomendaciones = tr.insertCell();
-				//tdRecomendaciones.appendChild(document.createTextNode(persona.get('recomendaciones')));
+					//Agregar recomendaciones
+					//var tdRecomendaciones = tr.insertCell();
+					//tdRecomendaciones.appendChild(document.createTextNode(persona.get('recomendaciones')));
 				
-				var tdPuntaje = tr.insertCell();
-				tdPuntaje.className="text-center";
-				tdPuntaje.appendChild(document.createTextNode(persona.get('puntaje')));
+					var tdPuntaje = tr.insertCell();
+					tdPuntaje.className="text-center";
+					tdPuntaje.appendChild(document.createTextNode(persona.get('puntaje')));
+				}
+				
+				
+
 			}
 			
 			body.appendChild(tbl);
