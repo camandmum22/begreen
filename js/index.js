@@ -21,8 +21,8 @@ function calcularTermometro(){
 		  if(totalPlantas<500)
 		  {
 			var percentage = totalPlantas/500* 100;
-		  	$('#level').css('width', percentage + unit);
-		    document.getElementById("fundadoMeta").innerHTML = "<strong>" + percentage + "% </strong><span>Meta</span>";
+		  	$('#level').css('width', percentage.toFixed(1) + unit);
+		    document.getElementById("fundadoMeta").innerHTML = "<strong>" + percentage.toFixed(1) + "% </strong><span>Meta</span>";
 		    document.getElementById("fundadoEntregados").innerHTML = "<strong>" + totalPlantas + "</strong> <span>Vendidas</span>";
 			
 		  }
