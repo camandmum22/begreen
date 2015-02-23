@@ -48,7 +48,7 @@
 			<!-- Header -->
 			<div class="navbar-header">
 				<!-- Brand -->					
-				<a class="navbar-brand" href="index.html"> <img class="img-responsive brandPeewah" src="images/brandPeewah.png"></a>
+				<a class="navbar-brand" href="index.html"><!--<img class="img-responsive brandPeewah" src="images/brandPeewah.png"> --> BeGreen Colombia</a>
 			
 				
 				<!-- Button -->
@@ -67,7 +67,8 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li> <a href="#" onclick="javascript:mostrarIndex()"> Inicio </a> </li>
 					<li> <a href="#" onclick="javascript:mostrarRankingUsuarios()"> Ranking </a> </li>
-					<li class="active"> <a href="#"> Contacto </a> </li>
+					<!--<li class="active"> <a href="#"> Contacto </a> </li-->
+					<li> <a href="#" onclick="javascript:mostrarAcercaDe()"> Acerca de </a> </li>
 					
 						
 				</ul>
@@ -87,19 +88,19 @@
 			
 			
 			<div class="form-group">
-				<label>Nombre</label>
+				<label>Nombre (*)</label>
 				<input class="form-control" placeholder="Tu nombre para poder conocerte" data-placement="top" data-trigger="manual" 
 				data-content="Debe contener al menos tres caracteres y no contener números" type="text" id="name">
 			</div>
 						  
 			<div class="form-group">
-				<label>Correo electrónico</label>
+				<label>Correo electrónico (*)</label>
 				<input class="form-control" placeholder="Tu email para poder contactarte" data-placement="top" 
 				data-trigger="manual" data-content="Debes poner un email v&aacute;lido para contactarte (user@gmail.com)" type="text" id="email">
 			</div>
 							  
 				<div class="form-group">
-					<label>Mensaje</label>
+					<label>Mensaje (*)</label>
 					<textarea class="form-control" rows="5" placeholder="Cuéntanos en qué te podemos colaborar" id="message"></textarea>
 				</div>
 				

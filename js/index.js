@@ -81,3 +81,11 @@ function mostrarCactus()
 	window.location.replace(newUrl);
 	document.location.href = newUrl;
 }
+
+//Mostrar acerca de
+function mostrarAcercaDe()
+{
+	var newUrl = "acercaDe.html";
+	window.location.replace(newUrl);
+	document.location.href = newUrl;
+}

@@ -14,6 +14,12 @@
 	height:300px;
 }
 
+.imgDetails{
+	margin:0 auto;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
 .imgService{
 	margin:0 auto;
 }
@@ -113,3 +119,9 @@ body{
 p, table{
 	font-size:14px;
 }
+
+.subtituloFlores{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+

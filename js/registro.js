@@ -5,12 +5,20 @@ function registrarClienteNuevo(){
 	var Persona = Parse.Object.extend("Persona");
 	var persona = new Persona();
 	
-	if(document.formRegister.cedula.value!=null && document.formRegister.cedula.value != "" && document.formRegister.nombre.value!= null && document.formRegister.nombre.value != "" && document.formRegister.email.value != null && document.formRegister.email.value!="" && document.formRegister.telefono.value != null && document.formRegister.telefono.value!="")
+	if(document.formRegister.cedula.value!=null && document.formRegister.cedula.value != "" && document.formRegister.nombre.value!= null && document.formRegister.nombre.value != "")
 	{
 		persona.set("cedula", document.formRegister.cedula.value);
 		persona.set("nombre", document.formRegister.nombre.value);
-		persona.set("email", document.formRegister.email.value);
-		persona.set("telefono", document.formRegister.telefono.value);
+		
+		if(document.formRegister.email.value != null && document.formRegister.email.value!="" )
+		{
+			persona.set("email", document.formRegister.email.value);
+		}
+		
+		if(document.formRegister.telefono.value != null && document.formRegister.telefono.value!="")
+		{
+			persona.set("telefono", document.formRegister.telefono.value);
+		}
 		
 
 		//Verificar si el usuario ya existe

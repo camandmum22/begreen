@@ -15,9 +15,9 @@ function mostrarRankingUsuarios()
 }
 
 //Mostrar acerca de
-function mostrarAcercaDe()
+function mostrarContacto()
 {
-	var newUrl = "acercaDe.html";
+	var newUrl = "contacto.html";
 	window.location.replace(newUrl);
 	document.location.href = newUrl;
 }

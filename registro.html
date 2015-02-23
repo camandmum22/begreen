@@ -19,6 +19,8 @@
 		
 	<!--Custom styles-->
 	<link href = "css/styles.css" rel="stylesheet">
+	<link href="css/custom-navbar.css" rel="stylesheet">
+	
 		
 	<!-- Favicon -->
 	<link rel="icon" 
@@ -42,7 +44,7 @@
 			<!-- Header -->
 			<div class="navbar-header">
 				<!-- Brand -->					
-				<a class="navbar-brand" href="index.html"> <img class="img-responsive brandPeewah" src="images/brandPeewah.png"></a>
+				<a class="navbar-brand" href="index.html"><!--<img class="img-responsive brandPeewah" src="images/brandPeewah.png"> --> BeGreen Colombia</a>
 			
 				
 				<!-- Button -->
@@ -61,7 +63,6 @@
 				<ul class="nav navbar-nav navbar-right" id="navigation">
 					<li class="active" id ="menuClienteNuevo"> <a href="javascript:void(0)" onclick="clienteNuevoSelected()"> Cliente nuevo </a> </li>
 					<li id="menuClienteExistente"> <a href="javascript:void(0)" onclick="clienteExistenteSelected()"> Cliente existente </a> </li>
-					<li id="menuRanking"> <a href="#"> Ranking </a> </li>
 						
 				</ul>
 					
@@ -97,13 +98,13 @@
 
 		
 				<div class="form-group">
-					<label>Cédula</label>
+					<label>Cédula (*)</label>
 					<input class="form-control required" placeholder="Cédula del cliente" data-placement="top" data-trigger="manual" 
 					data-content="Debe contener al menos tres caracteres" type="text" name="cedula">
 				</div>
 						  
 				<div class="form-group">
-					<label>Nombre</label>
+					<label>Nombre (*)</label>
 					<input class="form-control required" placeholder="Nombre del cliente" data-placement="top" 
 					data-trigger="manual" data-content="Debe contener al menos tres caracteres" type="text" name="nombre">
 				</div>
