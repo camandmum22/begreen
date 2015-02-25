@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+
+		
+	<title>Ranking - BeGreen</title>
+		
+	<!-- View port -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+	<!-- Formato-->
+	<meta charset="utf-8">
+		
+	<!-- Descripción del sitio -->
+	<meta name="description" content="Sitio web oficial de BeGreen Colombia">
+		
+	<!-- Bootstrap -->
+	<link href = "css/bootstrap.min.css" rel="stylesheet">
+		
+	<!--Custom styles-->
+	<link href = "css/styles.css" rel="stylesheet">
+		
+	<link href="css/custom-navbar.css" rel="stylesheet">
+		
+	<!-- Favicon -->
+	<link rel="icon" 
+	type="image/png" 
+	href="images/favicon.jpg">
+	
+	<!-- Parse -->
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script type="text/javascript" src="js/rankingVendedores.js"></script>
+			  
+	<!-- Google Analyitics-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-59731088-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+		
+		
+</head>
+	
+<body onload="mostrarRankingClientes()">
+	
+
+	
+	<!-- Navbar  Top-->
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+				
+			<!-- Header -->
+			<div class="navbar-header">
+				<!-- Brand -->					
+				<a class="navbar-brand" href="index.html"><!--<img class="img-responsive brandPeewah" src="images/brandPeewah.png"> --> BeGreen Colombia</a>
+			
+				
+				<!-- Button -->
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+				
+		</div>
+	</div>
+
+
+
+	<h2 class="text-center">Ranking de vendedores</h2>
+		
+	<table id="tablaRanking" class="table table-bordered table-striped table-condensed">
+		<thead>
+			<tr>
+				<th class="text-center">#</th>
+				<th class="text-center">Nombre</th>
+				<th class="text-center">Kits</th>
+				<th class="text-center">Bambú P.</th>
+				<th class="text-center">Bambú G.</th>
+				<th class="text-center">Cactus</th>
+				
+			</tr>
+		</thead>
+	</table>	
+		
+
+		
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.js"></script>
+		
+		
+</body>
+
+</html>
