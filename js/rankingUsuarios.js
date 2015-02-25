@@ -30,8 +30,12 @@ function mostrarRankingClientes()
 	query.find({
 		success:function(results)
 		{
+			var posArray = 0;
+			
 			for(var i =0; i < results.length; i++)
 			{
+				
+				
 				//Crear person
 				var persona = results[i];
 				
@@ -43,7 +47,7 @@ function mostrarRankingClientes()
 					//Agregar posición
 					var tdPosicion = tr.insertCell();
 					tdPosicion.className="text-center";
-					tdPosicion.appendChild(document.createTextNode((i+1)+''));
+					tdPosicion.appendChild(document.createTextNode((posArray+1)+''));
 				
 					//Agregar nombre
 					var tdNombre = tr.insertCell();
@@ -73,8 +77,10 @@ function mostrarRankingClientes()
 					var tdPuntaje = tr.insertCell();
 					tdPuntaje.className="text-center";
 					tdPuntaje.appendChild(document.createTextNode(persona.get('puntaje')));
+					
+					posArray++;
 				}
-				
+
 				
 
 			}
