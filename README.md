@@ -1,2 +1,3 @@
 # BeGreen
-Online Store Website. Store is focudes in plants and home-decoration products
+Online Store Website.
+The store offers mainly in plants and home-decoration products
