@@ -1,3 +1,7 @@
 # BeGreen
 Online Store Website.
-The store offers mainly plants and home-decoration products
+## Software Stack
+* JavaScript, Node.js, CSS, HTML, Bootstrap, jQuery, Parse (Backend).
+## Summary
+* BeGreen offers registration and log-in capabilities.
+* BeGreen allows users to explore the portfolio of plants and home-decoration products available.
